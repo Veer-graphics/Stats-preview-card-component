@@ -1,0 +1,139 @@
+/* universal */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca',sans-serif;
+}
+/* root */
+:root{
+    --main-bg:  rgb(9, 11, 26);
+    --card-bg:  rgb(27, 25, 56);
+    --accent:   rgb(170, 92, 219);
+
+    --heading-and-stats: rgb(255, 255, 255);
+    --main-paragraph: rgba(255, 255, 255, 0.75);
+    --stat-headings: rgba(255, 255, 255, 0.6)
+}
+/* images */
+img{
+    max-width: 100%;
+}
+.mobile-img{
+    display: block;
+}
+.desktop-img{
+    display: none;
+}
+/* body */
+body{
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--main-paragraph);
+    background-color: var(--main-bg);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* wrapper */
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+/* headings */
+h1, h2, span{
+    color: var(--heading-and-stats);
+    font-family: 'Inter',sans-serif;
+    font-weight: 700;
+}
+/* grids */
+.grid{
+    display: grid;
+}
+.grid__3col{
+    gap: 10px;
+}
+/* card */
+.card{
+    background-color: var(--card-bg);
+    overflow: hidden;
+    border-radius: 8px;
+}
+/* header */
+.header{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    background-color: var(--accent);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+/* card content */
+.card-content{
+    text-align: center;
+    padding: 30px 20px;
+}
+.heading1{
+    font-size: 30px;
+    line-height: 130%;
+}
+.insights{
+    color: var(--accent);
+}
+.description{
+    margin: 20px 10px;
+}
+.stat-heading{
+    font-size: 25px;
+}
+.stat-description{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--stat-headings);
+}
+
+/* desktop */
+@media (min-width : 600px)
+{
+    /* images */
+    .mobile-img{
+        display: none;
+    }
+    .desktop-img{
+        display: block;
+    }
+    /* grids */
+    .grid__2col{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: center;
+    }
+    .grid__3col{
+        grid-template-columns: repeat(3,1fr);
+        margin-top: 20px;
+    }
+    /* card-content */
+    .card-content{
+        text-align: left;
+        padding: 30px 50px;        
+    }
+    .description{
+        margin: 30px 0;
+    }
+}
+/* attribution */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 30px;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
